@@ -1,0 +1,30 @@
+server:
+  port: 7900
+
+spring:
+  application:
+    name: user-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/school
+    username: root
+    password: g
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka
+
+mybatis:
+  mapUnderscoreToCamelCase: true
+  typeAliasesPackage: com.spoon.pojo
+  mapperLocations: classpath:mappers/*.xml
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level: 
+    com.spoon.mapper: debug    

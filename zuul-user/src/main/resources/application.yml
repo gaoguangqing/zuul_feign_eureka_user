@@ -1,0 +1,16 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: gateway-zuul
+  resources:
+    static-locations: classpath:/statis/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@localhost:8761/eureka
+zuul:
+  routes:
+    app-zuul:
+      path: /school/**
+      serviceId: user-consumer
